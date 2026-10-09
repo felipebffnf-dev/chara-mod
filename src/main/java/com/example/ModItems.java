@@ -15,8 +15,15 @@ public class ModItems {
         new ResourceLocation(ExampleMod.MOD_ID, "toy_knife"),
         new SwordItem(Tiers.IRON, 4, -2.0f, new Item.Properties()));
 
+    public static final Item LOCKET = Registry.register(
+        BuiltInRegistries.ITEM,
+        new ResourceLocation(ExampleMod.MOD_ID, "locket"),
+        new LocketItem(new Item.Properties().stacksTo(1)));
+
     public static void register() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
-            .register(entries -> entries.accept(TOY_KNIFE));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT).register(entries -> {
+            entries.accept(TOY_KNIFE);
+            entries.accept(LOCKET);
+        });
     }
 }
