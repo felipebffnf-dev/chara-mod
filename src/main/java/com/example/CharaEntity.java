@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
@@ -48,6 +49,8 @@ public class CharaEntity extends Monster {
         goalSelector.addGoal(2, new WaterAvoidingRandomStrollGoal(this, 1.0));
         goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 16f));
         targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Mob.class, 10, true, false,
+            entity -> !(entity instanceof CharaEntity)));
     }
 
     @Override
