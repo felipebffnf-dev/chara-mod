@@ -9,6 +9,15 @@
           "name": "modid:toy_knife"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "modid:locket"
+        }
+      ]
     }
   ]
 }
