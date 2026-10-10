@@ -15,5 +15,6 @@ public class ExampleMod implements ModInitializer {
 		LOGGER.info("Hello Fabric world!");
 		ModEntities.register();
 		ModItems.register();
+		LocketBonus.register();
 	}
 }
